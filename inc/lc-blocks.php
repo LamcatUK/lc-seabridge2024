@@ -30,7 +30,34 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
-
+        acf_register_block_type(array(
+            'name'				=> 'lc_feature',
+            'title'				=> __('LC Feature'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/lc_feature.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'lc_service_nav',
+            'title'				=> __('LC Service Nav'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/lc_service_nav.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'lc_full_text',
+            'title'				=> __('LC Full Width Text'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/lc_full_text.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        
     }
 }
 add_action('acf/init', 'acf_blocks');

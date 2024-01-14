@@ -31,7 +31,7 @@
                             alt=""></div>
                     <h3>SoStar Digital</h3>
                     <p>SoStar Digital based in West Sussex, UK, is a specialist SEO and PPC agency with a solid track
-                        record of driving traffic through organic search and paid campaigns.</p>
+                        record of driving traffic through organic search and paid campaigns for businesses of all sizes.</p>
                 </a>
             </div>
         </div>

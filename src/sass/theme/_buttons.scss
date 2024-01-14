@@ -1,52 +1,17 @@
-/*
-.btn {
-    transition: 
-        background-color var(--transition),
-        color var(--transition);
-    font-weight: var(--fw-600);
-    font-size: var(--fs-400);
-}
-.btn-secondary {
-    color: white;
-}
-.btn-highlight {
-    background-color: var(--col-highlight-400);
-    color: white;
-    &:hover {
-        border-color: var(--col-highlight-400);
-        color: var(--col-highlight-400);
-        background-color: white;
-    }
-}
-.btn-outline {
-    border: 1px solid var(--col-grey-900);
-    &:hover {
-        border: 1px solid var(--col-grey-900);
-        color: white;
-        background-color: var(--col-grey-900);
-    }
-}
-
-.wpcf-7 input[type="submit"] {
-    &:disabled {
-        border-color: var(--col-highlight-400);
-        color: white;
-    }
-}
-*/
-
 .button {
     cursor: pointer;
-    display: block;
-    width: 100%;
+    display: inline-block;
+    min-width: 250px;
     text-align: center;
     padding: 0.5rem 1rem;
-    border: 2px solid var(--col-highlight);
+    border: 1px solid var(--col-highlight);
     background-color: var(--col-primary-900);
-    color: white;
+    color: var(--col-highlight);
     font-family: var(--ff-headlines);
-    font-weight: var(--fw-900);
-    font-size: var(--fs-500);
+    font-size: var(--fs-200);
+    font-weight: var(--fw-600);
+    text-transform: uppercase;
+    letter-spacing: 5px;
     line-height: 100%;
     position: relative;
     transition: color var(--transition);

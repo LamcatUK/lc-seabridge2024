@@ -1,0 +1,33 @@
+.service-nav {
+    &__card {
+        display: block;
+        padding: 1rem;
+        transition: color var(--transition);
+        &:not(:last-of-type) {
+            border-right: 1px solid var(--col-highlight);
+        }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+        &:hover {
+            color: var(--col-accent);
+            .service-nav__icon i {
+                transform: rotateY(360deg);
+            }
+        }
+    }
+
+    &__icon {
+        perspective: 300px;
+        margin-bottom: 0.5rem;
+        i {
+            transition: transform 1000ms ease-in-out;
+            transform-style: preserve-3d;
+        }
+    }
+    &__content {
+        font-size: var(--fs-300);
+    }
+}

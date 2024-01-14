@@ -110,29 +110,29 @@ function lc_dashboard_widget_display()
 }
 
 
-add_filter(
-    'wpseo_breadcrumb_links',
-    function ($links) {
-        global $post;
-        if (is_singular('fighters')) {
-            $t = get_the_category($post->ID);
-            $breadcrumb[] = array(
-                'url' => '/fighters/',
-                'text' => 'Fighters',
-            );
-            array_splice($links, 1, -2, $breadcrumb);
-        }
-        if (is_singular('events')) {
-            $t = get_the_category($post->ID);
-            $breadcrumb[] = array(
-                'url' => '/events/',
-                'text' => 'Events',
-            );
-            array_splice($links, 1, -2, $breadcrumb);
-        }
-        return $links;
-    }
-);
+// add_filter(
+//     'wpseo_breadcrumb_links',
+//     function ($links) {
+//         global $post;
+//         if (is_singular('fighters')) {
+//             $t = get_the_category($post->ID);
+//             $breadcrumb[] = array(
+//                 'url' => '/fighters/',
+//                 'text' => 'Fighters',
+//             );
+//             array_splice($links, 1, -2, $breadcrumb);
+//         }
+//         if (is_singular('events')) {
+//             $t = get_the_category($post->ID);
+//             $breadcrumb[] = array(
+//                 'url' => '/events/',
+//                 'text' => 'Events',
+//             );
+//             array_splice($links, 1, -2, $breadcrumb);
+//         }
+//         return $links;
+//     }
+// );
 
 // remove discussion metabox
 function cc_gutenberg_register_files()
@@ -307,18 +307,18 @@ function lc_post_nav()
 }
 
 
-/* append button to primary nav */
-add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
-function add_admin_link($items, $args)
-{
-    $vote = get_field('show_vote', 'options') ?? null;
-    if(isset($vote) && !empty($vote) && $vote[0] == 'Yes') {
-        if ($args->theme_location == 'primary_nav') {
-            $items .= '<li><a class="btn btn-highlight" title="Vote" href="/rankings/vote/">Vote</a></li>';
-        }
-    }
-    return $items;
-}
+// /* append button to primary nav */
+// add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
+// function add_admin_link($items, $args)
+// {
+//     $vote = get_field('show_vote', 'options') ?? null;
+//     if(isset($vote) && !empty($vote) && $vote[0] == 'Yes') {
+//         if ($args->theme_location == 'primary_nav') {
+//             $items .= '<li><a class="btn btn-highlight" title="Vote" href="/rankings/vote/">Vote</a></li>';
+//         }
+//     }
+//     return $items;
+// }
 
 
 
@@ -370,297 +370,6 @@ function add_current_nav_class($classes, $item)
     $classes[] = 'current-menu-item';
 
     return $classes;
-}
-
-/*---------------------------------------------------------------------------*/
-function calc_age($dob)
-{
-    $birthDate = new DateTime($dob);
-    $currentDate = new DateTime();
-    $age = $currentDate->diff($birthDate)->y;
-    return $age;
-}
-function calc_imperial_height($cm)
-{
-    $inches = $cm / 2.54;
-    $feet = floor($inches / 12);
-    $remainingInches = round($inches - ($feet * 12));
-    $height = $feet . "'" . $remainingInches . '"';
-    return $height;
-}
-
-function calc_imperial_weight($kg)
-{
-    return round($kg * 2.20462);
-}
-
-function get_wld($id)
-{
-    $res = fight_history($id);
-    $obj = array(
-        'wins' => 0,
-        'losses' => 0,
-        'draws' => 0,
-    );
-    foreach ($res as $r) {
-        if ($r['result'] == 'Win') {
-            $obj['wins']++;
-        } elseif ($r['result'] == 'Loss') {
-            $obj['losses']++;
-        } else {
-            $obj['draws']++;
-        }
-    }
-
-    return $obj['wins'] . '-' . $obj['losses'] . '-' . $obj['draws'];
-}
-
-function get_results($id)
-{
-    $res = fight_history($id);
-    $obj = array(
-        'wins' => 0,
-        'losses' => 0,
-        'draws' => 0,
-        'win_ko' => 0,
-        'win_sub' => 0,
-        'win_dec' => 0,
-        'loss_ko' => 0,
-        'loss_sub' => 0,
-        'loss_dec' => 0,
-    );
-    foreach ($res as $r) {
-        if ($r['result'] == 'Win') {
-            $obj['wins']++;
-            switch ($r['decision']) {
-                case 'KO/TKO':
-                    $obj['win_ko']++;
-                    break;
-                case 'Submission':
-                    $obj['win_sub']++;
-                    break;
-                case 'Decision':
-                    $obj['win_dec']++;
-                    break;
-            }
-        } elseif ($r['result'] == 'Loss') {
-            $obj['losses']++;
-            switch ($r['decision']) {
-                case 'KO/TKO':
-                    $obj['loss_ko']++;
-                    break;
-                case 'Submission':
-                    $obj['loss_sub']++;
-                    break;
-                case 'Decision':
-                    $obj['loss_dec']++;
-                    break;
-            }
-        } elseif ($r['result'] == 'Draw') {
-            $obj['draws']++;
-        }
-    }
-    return $obj;
-}
-function pct($i, $t)
-{
-    if ($t == 0) {
-        return '0%';
-    }
-    $p = ($i / $t) * 100;
-    $p = sprintf('%3d%%', $p);
-    return $p;
-}
-
-function fight_history($id)
-{
-
-    $res = get_field('results', 'options');
-    
-    $filteredResults = array_filter($res, function ($res) use ($id) {
-        return $res["fighter_one"] == $id || $res["fighter_two"] == $id;
-    });
-
-    foreach ($filteredResults as &$f) {
-        $f['date'] = get_field('event_date', $f['event']);
-        if ($f['result'] == 'Win' && $f['fighter_one'] == $id) {
-            $f['result'] = 'Win';
-        } elseif ($f['result'] == 'Win' && $f['fighter_two'] == $id) {
-            $f['result'] = 'Loss';
-        } elseif ($f['result'] == 'Loss' && $f['fighter_one'] == $id) {
-            $f['result'] = 'Loss';
-        } elseif ($f['result'] == 'Loss' && $f['fighter_two'] == $id) {
-            $f['result'] = 'Win';
-        }
-    }
-
-    usort($filteredResults, 'compareDatesDesc');
-    
-    return $filteredResults;
-
-}
-function compareDatesAsc($a, $b)
-{
-    return strcmp($a['date'], $b['date']);
-}
-function compareDatesDesc($a, $b)
-{
-    return strcmp($b['date'], $a['date']);
-}
-
-
-function date_to_cal($date)
-{
-    if (preg_match('/^(\d{4})(\d{2})(\d{2})$/', $date, $matches)) {
-
-        $monthMap = [
-            "01" => "Jan",
-            "02" => "Feb",
-            "03" => "Mar",
-            "04" => "Apr",
-            "05" => "May",
-            "06" => "Jun",
-            "07" => "Jul",
-            "08" => "Aug",
-            "09" => "Sep",
-            "10" => "Oct",
-            "11" => "Nov",
-            "12" => "Dec",
-        ];
-
-        ob_start();
-        $year = $matches[1];
-        $month = $matches[2];
-        $day = $matches[3];
-        ?>
-<div class="cal">
-    <div class="mon"><?=$monthMap[$month]?></div>
-    <div class="day"><?=$day?></div>
-    <div class="year"><?=$year?></div>
-</div>
-<?php
-        return ob_get_clean();
-    } else {
-        return;
-    }
-}
-
-function get_results_by_event($event_id)
-{
-    $res = get_field('results', 'options');
-    
-    $filteredResults = array_filter($res, function ($res) use ($event_id) {
-        return $res['event'] == $event_id;
-    });
-    
-    return $filteredResults;
-}
-
-/*---------------------------- sidebars --*/
-
-function sidebar_latest_news($ids = 0)
-{
-    ob_start();
-    $q = new WP_Query(array(
-        'post_type' => 'post',
-        'posts_per_page' => 3,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post__not_in' => array($ids),
-    ));
-    if ($q->have_posts()) {
-        ?>
-<div class="sidebar_panel">
-    <h3 class="headline fs-500">Latest <span>News</span></h3>
-    <div class="sidebar_panel__data">
-        <ul>
-            <?php
-        while ($q->have_posts()) {
-            $q->the_post();
-            ?>
-            <li><a
-                    href="<?=get_the_permalink()?>"><?=get_the_title()?></a>
-            </li>
-            <?php
-        }
-        ?>
-        </ul>
-    </div>
-</div>
-<?php
-    }
-    wp_reset_postdata();
-    return ob_get_clean();
-}
-
-function sidebar_upcoming_events($ids = 0)
-{
-    ob_start();
-    
-    $q = new WP_Query(array(
-        'post_type' => 'events',
-        'posts_per_page' => -1,
-        'meta_query' => array(
-            array(
-              'key' => 'event_date',
-              'value' => date('Ymd'),
-              'compare' => '>=',
-              'type' => 'DATE',
-            ),
-        ),
-        'meta_key' => 'event_date',
-        'orderby' => 'meta_value_num',
-        'order' => 'ASC',
-        'post__not_in' => array($ids),
-    ));
-    if ($q->have_posts()) {
-        ?>
-<div class="sidebar_panel">
-    <h3 class="headline fs-500">Upcoming <span>Events</span></h3>
-    <div class="sidebar_panel__data">
-        <?php
-        while ($q->have_posts()) {
-            $q->the_post();
-            ?>
-        <a href="<?=get_the_permalink(get_the_ID())?>"
-            class="sidebar_panel__event">
-            <?=date_to_cal(get_field('event_date'))?>
-            <div>
-                <h4 class="headline fs-400 mb-0">
-                    <?=get_the_title()?>
-                </h4>
-                <div>
-                    <?=get_field('location')?>
-                </div>
-            </div>
-        </a>
-        <?php
-        }
-        ?>
-    </div>
-</div>
-<?php
-    }
-    wp_reset_postdata();
-    return ob_get_clean();
-}
-
-function sidebar_vote_cta()
-{
-    ob_start();
-    $vote = get_field('show_vote', 'options') ?? null;
-    if(isset($vote) && !empty($vote) && $vote[0] == 'Yes') {
-        ?>
-<div class="sidebar_panel">
-    <h3 class="headline fs-500">Register <span>Your Vote!</span></h3>
-    <div class="sidebar_panel__data">
-        <p>Who would you like to see matched on our next fight card?</p>
-        <a class="button button--block" href="/rankings/vote/">Vote</a>
-    </div>
-</div>
-<?php
-    }
-    return ob_get_clean();
 }
 
 ?>

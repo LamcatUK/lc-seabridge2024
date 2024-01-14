@@ -6745,6 +6745,16 @@
 
 	// Add your custom JS here.
 
+	/* Function to add styles after page load */
+	jQuery(function ($) {
+	  var navListItems = document.querySelectorAll('ul.nav-list li');
+	  console.log('here' + navListItems);
+	  navListItems.forEach((item, index) => {
+	    var style = document.createElement('style');
+	    document.head.appendChild(style);
+	    style.sheet.insertRule(`ul.nav-list li:nth-child(${index + 1}) { view-transition-name: navLink-${index + 1}; }`, 0);
+	  });
+	}, 9999);
 	AOS.init();
 
 	// jQuery(function($){

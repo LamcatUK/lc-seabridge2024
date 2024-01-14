@@ -34,7 +34,7 @@ a {
 body {
     display: grid;
     @media (min-width:992px) {
-        grid-template-columns: 14rem 1fr;
+        grid-template-columns: var(--nav-width) 1fr;
     }
     min-height: 100vh;
     margin: 0;
@@ -52,7 +52,12 @@ main {
     background-color: var(--col-primary-900);
     color: var(--col-highlight);
     z-index: 10;
-    padding-inline: 2rem;
+    position: relative;
+    // padding-inline: 2rem;
+}
+
+section {
+    background-color: var(--col-primary-900);
 }
 
 .container-xl .container-xl {

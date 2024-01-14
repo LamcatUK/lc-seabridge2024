@@ -7,11 +7,17 @@ $col-highlight: #80ff00;
 
     --hsl-primary-400: 196 96% 11%;
     --hsl-primary-900: 193 94% 7%;
+    --hsl-primary-000: 193 94% 4%;
     --hsl-highlight: 169 100% 61%;
+    --hsl-accent: 25 100% 65%;
 
     --col-primary-400: hsl( var(--hsl-primary-400) );
     --col-primary-900: hsl( var(--hsl-primary-900) );
+    --col-primary-000: hsl( var(--hsl-primary-000) );
     --col-highlight: hsl( var(--hsl-highlight) );
+    --col-accent: hsl( var(--hsl-accent) );
+
+    --col-light: rgb(255 255 255);
 
     --body-bg: var(--col-primary-900);
     --nav-bg: var(--col-primary-400);
@@ -19,7 +25,7 @@ $col-highlight: #80ff00;
     --h-top: 100px;
 
     --fs-100: 0.64rem;
-    // --fs-200: clamp(0.80rem, calc(0.77rem + 0.17vw), 0.90rem);
+    --fs-200: 0.8rem;
     --fs-300: 0.90rem;
     --fs-400: 1.00rem;
     // --fs-450: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
@@ -27,7 +33,8 @@ $col-highlight: #80ff00;
     // --fs-600: clamp(1.56rem, calc(1.49rem + 0.34vw), 1.76rem);
     --fs-700: 1.95rem;
     // --fs-800: clamp(2.44rem, calc(2.33rem + 0.53vw), 2.75rem);
-    --fs-900: 5rem;
+    // --fs-900: clamp(2.5rem, calc(2.44rem + 0.62vw), 5rem);
+    --fs-900: clamp(2.5rem, 0rem + 6.667vw, 6rem);
 
     --fw-400: 300;
     --fw-600: 700;
@@ -38,5 +45,7 @@ $col-highlight: #80ff00;
 
     --shadow-1: rgba(0,0,0,.12) 0 1px 3px, rgba(0,0,0,.24) 0 1px 2px;
     --filter-shadow-1: drop-shadow(0 1px 3px rgba(0,0,0,.12)) drop-shadow(0 1px 2px rgba(0,0,0,.24));
+
+    --nav-width: 14rem;
 
 }

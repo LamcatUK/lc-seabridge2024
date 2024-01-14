@@ -1,4 +1,10 @@
 footer {
+background-color: var(--col-primary-000);
+
+    position: sticky;
+    bottom: 0;
+    z-index: -1;
+
     font-size: var(--fs-300);
 
     img {
@@ -45,10 +51,11 @@ footer {
     display: flex;
     justify-content: space-between;
     a {
-        color: white;
+        color: hsl(var(--hsl-highlight) / 0.8);
         transition: var(--transition);
+        letter-spacing: 0;
         &:hover {
-            color: white;
+            color: var(--col-accent);
             opacity: 0.6;
         }
         &::after{

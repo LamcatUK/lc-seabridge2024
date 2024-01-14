@@ -40,18 +40,18 @@ defined('ABSPATH') || exit;
             </div>
         </div>
     </div>
-</footer>
-<div class="colophon">
-    <div class="container-xl d-md-flex justify-content-between">
-        <div>&copy; <?=date('Y')?> Seabridge
-            Digital.</div>
-        <div>
-            <a href="/privacy-policy/">Privacy</a> &amp; <a href="/cookie-policy/">Cookie Policy</a>
-            |
-            <span>Site by <a href="https://www.lamcat.co.uk/">Lamcat</a></span>
+    <div class="colophon">
+        <div class="container-xl d-md-flex justify-content-between">
+            <div>&copy; <?=date('Y')?> Seabridge
+                Digital.</div>
+            <div>
+                <a href="/privacy-policy/">Privacy</a> &amp; <a href="/cookie-policy/">Cookie Policy</a>
+                |
+                <span>Site by <a href="https://www.lamcat.co.uk/">Lamcat</a></span>
+            </div>
         </div>
     </div>
-</div>
+</footer>
 <?php wp_footer();
 if (get_field('gtm_property', 'options')) {
     ?>

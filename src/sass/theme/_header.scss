@@ -58,18 +58,11 @@
         letter-spacing: 5px;
         text-transform: uppercase;
     }
-    li:nth-child(1) a {
-        view-transition-name: navLink-1;
+
+    li:not(.active) a:hover {
+        color: var(--col-accent);
     }
-    li:nth-child(2) a {
-        view-transition-name: navLink-2;
-    }
-    li:nth-child(3) a {
-        view-transition-name: navLink-3;
-    }
-    li:nth-child(4) a {
-        view-transition-name: navLink-4;
-    }
+
     li.active a {
         --_border_radius: 1rem;
         view-transition-name: activeNavTab;

@@ -1,10 +1,15 @@
 .hero {
-    width: 100%;
+    width: 100vw;
+    @media (min-width:992px) {
+        width: calc(100vw - var(--nav-width));
+    }
     background-size: cover;
     background-position: center;
     height: 400px;
     background-color: white;
-    position: relative;
+    position: sticky;
+    top:0;
+    z-index: -1;
     isolation: isolate;
     display: grid;
     &::before {
