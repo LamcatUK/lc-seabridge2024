@@ -1,0 +1,34 @@
+.agencies {
+    &__card {
+        display: grid;
+        text-align: center;
+        
+        h3 {
+            font-weight: var(--fw-400);
+            text-transform: uppercase;
+            letter-spacing: calc(var(--fs-400) / 4);
+            min-height: 2.5rem;
+            display: grid;
+            place-content: center;
+        }
+
+        &:hover {
+            img {
+                transform: rotateY(360deg);
+            }
+        }
+    }
+    &__img {
+        perspective: 300px;
+        margin-bottom: 1rem;
+        margin-inline: auto;
+        img {
+            display: block;
+            aspect-ratio: 1;
+            width: 150px;
+            height: 150px;
+            transition: transform 3000ms ease-in-out;
+            transform-style: preserve-3d;
+        }
+    }
+}

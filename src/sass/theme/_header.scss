@@ -1,0 +1,110 @@
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    height: min-content;
+    padding-block: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    @media (min-width:992px) {
+        z-index: 0;
+        grid-template-rows: 100px max-content;
+        grid-template-columns: 1fr;
+        height: 100%;
+        width: unset;
+        position: sticky;
+    }
+
+    .logo-container {
+        width: 100%;
+        img {
+            display: block;
+            aspect-ratio: 4 / 1;
+            width: 200px;
+            object-fit: contain;
+            object-position: center;
+            margin-inline-start: 1rem;
+            @media (min-width:992px) {
+                margin-inline-start: 2rem;
+            }
+        }
+    }
+    #navbar {
+        width: 14rem;
+    }
+}
+.navbar-toggler {
+    color: var(--col-highlight);
+}
+.nav-list {
+    @media (min-width:992px) {
+        
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    padding-block: 1rem;   
+    
+    a {
+        display: block;
+        position: relative;
+        z-index: 990;
+        padding: 1rem 1rem;
+        margin-inline-start: 1rem;
+        border-radius: 100vw 0 0 100vw;
+        color: var(--col-highlight);
+        text-decoration: none;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+    li:nth-child(1) a {
+        view-transition-name: navLink-1;
+    }
+    li:nth-child(2) a {
+        view-transition-name: navLink-2;
+    }
+    li:nth-child(3) a {
+        view-transition-name: navLink-3;
+    }
+    li:nth-child(4) a {
+        view-transition-name: navLink-4;
+    }
+    li.active a {
+        --_border_radius: 1rem;
+        view-transition-name: activeNavTab;
+        background-color: var(--body-bg);
+        color: var(--active);
+        position: relative;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: var(--_border_radius);
+            height: var(--_border_radius);
+            right: 0;
+            background-color: var(--nav-bg);
+        }
+        &::before {
+            top: calc(var(--_border_radius) * -1);
+            border-radius: 0 0 100vw 0;
+            box-shadow: 5px 5px 0 5px var(--body-bg);
+        }
+        &::after {
+            bottom: calc(var(--_border_radius) * -1);
+            border-radius: 0 100vw 0 0;
+            box-shadow: 5px -5px 0 5px var(--body-bg);
+        }
+    }
+
+    }
+
+    .nav-link {
+        font-size: 0.889rem;
+    }
+}
+
+::view-transition-group(activeNavTab) {
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+}

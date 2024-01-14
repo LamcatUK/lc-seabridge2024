@@ -1,0 +1,30 @@
+.hero {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    background-color: white;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(90deg, var(--body-bg), transparent, var(--body-bg));
+        z-index: -1;
+    }
+
+    h1 {
+        width: max-content;
+        filter: drop-shadow(2px 4px 6px var(--col-primary-400));
+    }
+    &__pre,
+    &__post {
+        font-size: var(--fs-500);
+    }
+    &__title {
+        font-size: var(--fs-900);
+        padding-bottom: 0.5rem;
+    }
+}
