@@ -22886,7 +22886,7 @@ sup {
 
 .navbar {
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 75px;
   height: -moz-min-content;
   height: min-content;
   padding-block: 1rem;
@@ -23032,7 +23032,6 @@ footer .current_page_item a {
 }
 
 .colophon {
-  border-top: 1px solid var(--col-highlight);
   color: hsl(var(--hsl-highlight)/0.8);
   font-size: var(--fs-100);
   text-align: center;
@@ -23040,10 +23039,14 @@ footer .current_page_item a {
   display: flex;
   justify-content: space-between;
 }
+.colophon .container-xl {
+  border-top: 1px solid var(--col-highlight);
+}
 .colophon a {
   color: hsl(var(--hsl-highlight)/0.8);
   transition: var(--transition);
   letter-spacing: 0;
+  text-transform: initial;
 }
 .colophon a:hover {
   color: var(--col-accent);
