@@ -1,5 +1,5 @@
 .hero {
-    width: 100vw;
+    width: 100%;
     @media (min-width:992px) {
         width: calc(100vw - var(--nav-width));
     }

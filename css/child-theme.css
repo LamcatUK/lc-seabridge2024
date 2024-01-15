@@ -23216,7 +23216,7 @@ footer .current_page_item a {
 }
 
 .hero {
-  width: 100vw;
+  width: 100%;
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -23282,18 +23282,121 @@ footer .current_page_item a {
 }
 
 .team__card {
-  display: grid;
-  text-align: center;
-}
-.team__card img {
-  margin-bottom: 1rem;
+  --_transition: 300ms;
+  position: relative;
+  isolation: isolate;
+  border-radius: 1rem;
   margin-inline: auto;
-  aspect-ratio: 1;
-  width: 200px;
+}
+@media (min-width: 992px) {
+  .team__card {
+    width: 300px;
+    height: 400px;
+  }
+}
+.team__inner {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .team__inner {
+    position: absolute;
+    inset: 1rem;
+  }
+}
+.team__inner > * {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1rem;
+  inset: 0;
+}
+@media (min-width: 992px) {
+  .team__inner > * {
+    position: absolute;
+  }
+}
+.team__front {
+  z-index: 0;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 3/4.2;
+  width: 100%;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .team__front {
+    margin-bottom: 0;
+  }
+}
+.team__front img {
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
+  height: 100%;
+  transition: transform calc(var(--_transition) * 1.5) ease-in-out;
+}
+.team__back {
+  background-color: hsl(var(--hsl-primary-400)/0.8);
+  color: var(--col-highlight);
+  max-width: 400px;
+  margin-inline: auto;
+  transform-origin: bottom;
+  z-index: 1;
+  transition: transform var(--_transition) ease-in-out;
+  display: grid;
+  place-content: center;
+}
+@media (min-width: 992px) {
+  .team__back {
+    transform: scaley(0);
+  }
+}
+.team__cruft, .team__cruft--alt {
+  display: none;
+  position: absolute;
+  inset: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: var(--col-highlight);
+  border: 1px solid var(--col-primary-900);
+  transition: transform calc(var(--_transition) / 1.5) ease-in-out;
+  z-index: -1;
+}
+@media (min-width: 992px) {
+  .team__cruft, .team__cruft--alt {
+    display: block;
+  }
+}
+.team__card:hover .team__front img {
+  transform: scale(1.1);
+}
+.team__card:hover .team__back {
+  transform: scaley(1);
+}
+.team__card:hover .team__cruft {
+  transform: rotate(-4deg);
+}
+.team__card:hover .team__cruft--alt {
+  transform: rotate(-8deg);
+}
+.team__title {
+  font-size: var(--fs-500);
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.team__role {
+  font-size: var(--fs-100);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.team__content {
+  font-size: var(--fs-300);
+  line-height: 1.2;
 }
 
 .service-nav__card {
