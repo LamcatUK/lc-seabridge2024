@@ -3,7 +3,7 @@
         <h2>Our Agencies</h2>
         <div class="row g-4 justify-content-center mx-0">
             <div class="col-md-6 col-xl-4 text-center">
-                <a class="agencies__card" href="https://flpixel.com" target="_blank">
+                <a class="agencies__card" href="https://flpixel.com" target="_blank" data-aos="fade-up">
                     <div class="agencies__img"><img
                             src="<?=get_stylesheet_directory_uri()?>/img/logo-flp.svg"
                             alt=""></div>
@@ -14,7 +14,7 @@
                 </a>
             </div>
             <div class="col-md-6 col-xl-4 text-center">
-                <a class="agencies__card" href="https://www.lamcat.co.uk" target="_blank">
+                <a class="agencies__card" href="https://www.lamcat.co.uk" target="_blank" data-aos="fade-up" data-aos-delay="100">
                     <div class="agencies__img"><img
                             src="<?=get_stylesheet_directory_uri()?>/img/logo-lamcat.svg"
                             alt=""></div>
@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="col-md-6 col-xl-4 text-center">
-                <a class="agencies__card" href="#" target="_blank">
+                <a class="agencies__card" href="#" target="_blank" data-aos="fade-up" data-aos-delay="200">
                     <div class="agencies__img"><img
                             src="<?=get_stylesheet_directory_uri()?>/img/logo-sostar.svg"
                             alt=""></div>

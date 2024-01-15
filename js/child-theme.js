@@ -6755,7 +6755,10 @@
 	    style.sheet.insertRule(`ul.nav-list li:nth-child(${index + 1}) { view-transition-name: navLink-${index + 1}; }`, 0);
 	  });
 	}, 9999);
-	AOS.init();
+	AOS.init({
+	  once: true,
+	  easing: 'ease-in'
+	});
 
 	// jQuery(function($){
 	//     var btn = $('#to-top');

@@ -1,5 +1,5 @@
 <section class="full_text">
-    <div class="container-xl py-5">
+    <div class="container-xl py-5" data-aos="fade">
         <?php
         if (get_field('pre_title') ?? null) {
             ?>

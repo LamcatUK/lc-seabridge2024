@@ -12,7 +12,10 @@ console.log('here'+navListItems);
 },9999
 );
 
-AOS.init();
+AOS.init({
+    once: true,
+    easing: 'ease-in',
+});
 
 // jQuery(function($){
 //     var btn = $('#to-top');

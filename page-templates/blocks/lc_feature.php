@@ -1,6 +1,9 @@
 <?php
 $txtcol = get_field('order') == 'text' ? 'order-2 order-md-1' : 'order-2 order-md-2';
 $imgcol = get_field('order') == 'text' ? 'order-1 order-md-2' : 'order-1 order-md-1';
+
+$txtanim = get_field('order') == 'text' ? 'fade-right' : 'fade-left';
+$imganim = get_field('order') == 'text' ? 'fade-left' : 'fade-right';
 ?>
 <section class="feature py-5">
     <div class="container-xl">
@@ -12,7 +15,7 @@ $imgcol = get_field('order') == 'text' ? 'order-1 order-md-2' : 'order-1 order-m
         }
         ?>
         <div class="row g-4">
-            <div class="col-md-6 <?=$txtcol?>">
+            <div class="col-md-6 <?=$txtcol?>" data-aos="<?=$txtanim?>">
                 <?php
                 if (get_field('title') ?? null) {
                     ?>
@@ -30,7 +33,7 @@ $imgcol = get_field('order') == 'text' ? 'order-1 order-md-2' : 'order-1 order-m
                 }
                 ?>
             </div>
-            <div class="col-md-6 <?=$imgcol?>">
+            <div class="col-md-6 <?=$imgcol?>" data-aos="<?=$imganim?>">
                 <img src="<?=wp_get_attachment_image_url(get_field('image'),'large')?>" alt="<?=get_field('title')?>" class="feature__img">
             </div>
         </div>

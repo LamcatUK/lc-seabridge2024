@@ -3,16 +3,16 @@
 function cb_register_post_types()
 {
     /**
-     * Post Type: Fighters.
+     * Post Type: Work.
      */
 
     $labels = [
-       "name" => esc_html__("Fighters", "lc-seabridge2024"),
-       "singular_name" => esc_html__("Fighter", "lc-seabridge2024"),
+       "name" => "Works",
+       "singular_name" => "Work",
     ];
 
     $args = [
-        "label" => esc_html__("Fighters", "lc-seabridge2024"),
+        "label" => "Works",#
         "labels" => $labels,
         "description" => "",
         "public" => true,
@@ -31,7 +31,7 @@ function cb_register_post_types()
         "map_meta_cap" => true,
         "hierarchical" => false,
         "can_export" => true,
-        "rewrite" => [ "slug" => "fighters", "with_front" => false ],
+        "rewrite" => [ "slug" => "work", "with_front" => false ],
         "query_var" => true,
         "supports" => [ "title", "editor", "thumbnail" ],
         "show_in_graphql" => false,

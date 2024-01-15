@@ -2,7 +2,7 @@
     <div class="container-xl">
         <h2>Our Leadership Team</h2>
         <div class="row g-4 justify-content-center mx-0">
-            <div class="col-md-6 col-xl-4 text-center">
+            <div class="col-md-6 col-xl-4 text-center" data-aos="fade-up">
                 <div class="team__card">
                     <div class="team__cruft"></div>
                     <div class="team__inner">
@@ -24,7 +24,7 @@
                     <div class="team__role">Co-Founder / FL Pixel</div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-4 text-center">
+            <div class="col-md-6 col-xl-4 text-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="team__card">
                     <div class="team__cruft"></div>
                     <div class="team__inner">
@@ -46,7 +46,7 @@
                     <div class="team__role">Co-Founder / Lamcat</div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-4 text-center">
+            <div class="col-md-6 col-xl-4 text-center" data-aos="fade-up" data-aos-delay="200">
                 <div class="team__card">
                     <div class="team__cruft"></div>
                     <div class="team__inner">

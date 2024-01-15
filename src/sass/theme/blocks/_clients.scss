@@ -1,0 +1,27 @@
+.clients {
+    &__inner {
+        background-color: var(--col-primary-000);
+        color: var(--col-highlight);
+        padding-block: 1rem;
+    }
+
+    .swiper-container {
+        min-height: 0;
+        min-width: 0;
+        overflow: hidden;
+    }
+    .swiper-container > .swiper-wrapper{
+      transition-timing-function : linear;
+    }
+    .swiper-slide {
+        display:grid;
+        height: 60px;
+        place-content:center;
+    }
+    .swiper-slide img {
+        max-height: 60px;
+        max-width: 200px;
+    
+        filter: brightness(5) grayscale(1) brightness(50%);
+    }
+}
