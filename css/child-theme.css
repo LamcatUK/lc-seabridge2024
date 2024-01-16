@@ -23436,24 +23436,6 @@ footer .current_page_item a {
   color: var(--col-highlight);
   padding-block: 1rem;
 }
-.clients .swiper-container {
-  min-height: 0;
-  min-width: 0;
-  overflow: hidden;
-}
-.clients .swiper-container > .swiper-wrapper {
-  transition-timing-function: linear;
-}
-.clients .swiper-slide {
-  display: grid;
-  height: 60px;
-  place-content: center;
-}
-.clients .swiper-slide img {
-  max-height: 60px;
-  max-width: 200px;
-  filter: brightness(5) grayscale(1) brightness(50%);
-}
 
 a,
 a.noline {
