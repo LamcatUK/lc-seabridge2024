@@ -13,14 +13,14 @@
   --col-light: rgb(255 255 255);
   --body-bg: var(--col-primary-900);
   --nav-bg: var(--col-primary-400);
-  --h-top: 100px;
+  --h-top: 90px;
   --fs-100: 0.64rem;
   --fs-200: 0.8rem;
   --fs-300: 0.90rem;
   --fs-400: 1.00rem;
-  --fs-500: 1.2rem;
+  --fs-500: clamp(1.1rem, 0.975rem + 0.4vw, 1.2rem);
   --fs-700: 1.95rem;
-  --fs-900: clamp(2.5rem, 0rem + 6.667vw, 6rem);
+  --fs-900: clamp(2.2rem, -2.55rem + 15.2vw, 6rem);
   --fw-400: 300;
   --fw-600: 700;
   --ff-body: "Adrianna", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;

@@ -13,14 +13,14 @@
   --col-light: rgb(255 255 255);
   --body-bg: var(--col-primary-900);
   --nav-bg: var(--col-primary-400);
-  --h-top: 100px;
+  --h-top: 90px;
   --fs-100: 0.64rem;
   --fs-200: 0.8rem;
   --fs-300: 0.90rem;
   --fs-400: 1.00rem;
-  --fs-500: 1.2rem;
+  --fs-500: clamp(1.1rem, 0.975rem + 0.4vw, 1.2rem);
   --fs-700: 1.95rem;
-  --fs-900: clamp(2.5rem, 0rem + 6.667vw, 6rem);
+  --fs-900: clamp(2.2rem, -2.55rem + 15.2vw, 6rem);
   --fw-400: 300;
   --fw-600: 700;
   --ff-body: "Adrianna", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -22995,8 +22995,9 @@ footer {
   background-color: var(--col-primary-000);
   position: sticky;
   bottom: 0;
-  z-index: -1;
-  font-size: var(--fs-300);
+  right: 0;
+  z-index: -10;
+  font-size: var(--fs-200);
 }
 footer img {
   max-width: 240px;
@@ -23012,6 +23013,7 @@ footer .menu {
   list-style: none;
   -webkit-padding-start: 0;
   padding-inline-start: 0;
+  margin-bottom: 0;
 }
 footer li.menu-item {
   margin-bottom: 0.5rem;
@@ -23218,19 +23220,23 @@ footer .current_page_item a {
 }
 
 .hero {
+  margin-top: var(--h-top);
+  top: var(--h-top);
   width: 100%;
   background-size: cover;
   background-position: center;
   height: 400px;
   background-color: white;
   position: sticky;
-  top: 0;
   z-index: -1;
   isolation: isolate;
   display: grid;
+  place-content: center;
 }
 @media (min-width: 992px) {
   .hero {
+    margin-top: 0;
+    top: 0;
     width: calc(100vw - var(--nav-width));
   }
 }
@@ -23431,10 +23437,30 @@ footer .current_page_item a {
   font-size: var(--fs-300);
 }
 
+.clients {
+  max-width: 99svw;
+}
+@media (min-width: 992px) {
+  .clients {
+    max-width: calc(100vw - var(--nav-width));
+  }
+}
 .clients__inner {
   background-color: var(--col-primary-000);
   color: var(--col-highlight);
   padding-block: 1rem;
+}
+.clients__slide {
+  --_slide-height: 50px;
+  display: grid !important;
+  place-content: center;
+  height: var(--_slide-height);
+}
+.clients__slide img {
+  max-height: var(--_slide-height);
+  max-width: 200px;
+  margin-inline: auto;
+  filter: brightness(5) grayscale(1) brightness(50%);
 }
 
 a,

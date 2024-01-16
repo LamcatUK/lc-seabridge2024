@@ -1,6 +1,10 @@
 .hero {
+    margin-top: var(--h-top);
+    top: var(--h-top);
     width: 100%;
     @media (min-width:992px) {
+        margin-top: 0;
+        top:0;
         width: calc(100vw - var(--nav-width));
     }
     background-size: cover;
@@ -8,10 +12,11 @@
     height: 400px;
     background-color: white;
     position: sticky;
-    top:0;
+
     z-index: -1;
     isolation: isolate;
     display: grid;
+    place-content: center;
     &::before {
         content: "";
         position: absolute;

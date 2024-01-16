@@ -1,7 +1,24 @@
 .clients {
+    max-width: 99svw;
+    @media (min-width:992px) {
+        max-width: calc(100vw - var(--nav-width));
+    }
     &__inner {
         background-color: var(--col-primary-000);
         color: var(--col-highlight);
         padding-block: 1rem;
+    }
+
+    &__slide {
+        --_slide-height: 50px;
+        display: grid !important;
+        place-content: center;
+        height: var(--_slide-height);
+        img {
+            max-height: var(--_slide-height);
+            max-width: 200px;
+            margin-inline: auto;
+            filter: brightness(5) grayscale(1) brightness(50%);
+        }
     }
 }
