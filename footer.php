@@ -11,14 +11,16 @@
 defined('ABSPATH') || exit;
 
 ?>
-<footer class="footer pt-5">
+<footer class="footer pt-4">
     <div class="container-xl">
-        <div class="row pb-4">
-            <div class="col-md-6 col-lg-3 mb-3">
+        <div class="row pb-4 mx-0">
+            <div class="col-md-6 col-lg-3 mb-2 text-center text-md-start">
                 <img src="<?=get_stylesheet_directory_uri()?>/img/seabridge-logo.svg"
                     alt="">
             </div>
-            <div class="col-md-6 col-lg-3 mb-3">
+            <div class="col-md-6 col-lg-3 mb-2">
+                <?php
+                /*
                 <!--
                 <div class="pretitle">Contact Us</div>
                 <ul class="fa-ul">
@@ -31,17 +33,19 @@ defined('ABSPATH') || exit;
                     <?=do_shortcode('[social_icons]')?>
                 </div>
                 -->
+                */
+?>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-2">
+            <div class="col-6 col-lg-3 text-center text-md-start">
                 <?php wp_nav_menu(array('theme_location' => 'footer_menu1')); ?>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-2">
+            <div class="col-6 col-lg-3 text-center text-md-start">
                 <?php wp_nav_menu(array('theme_location' => 'footer_menu2')); ?>
             </div>
         </div>
     </div>
     <div class="colophon">
-        <div class="container-xl d-md-flex justify-content-between">
+        <div class="container-xl d-md-flex justify-content-between px-4">
             <div>&copy; <?=date('Y')?> Seabridge
                 Digital.</div>
             <div>
@@ -63,21 +67,6 @@ if (get_field('gtm_property', 'options')) {
 <?php
 }
 ?>
-<script>
-    function jumpTo(anchor_id) {
-        var url = location.href; //Saving URL without hash.
-        location.href = "#" + anchor_id; //Navigate to the target element.
-        history.replaceState(null, null, url); //method modifies the current history entry.
-    }
-
-    function scrollSmoothTo(elementId) {
-        var element = document.getElementById(elementId);
-        element.scrollIntoView({
-            block: 'start',
-            behavior: 'smooth'
-        });
-    }
-</script>
 </body>
 
 </html>

@@ -1,15 +1,16 @@
 footer {
-background-color: var(--col-primary-000);
+    background-color: var(--col-primary-000);
 
     // position: sticky;
     bottom: 0;
-    z-index: -1;
+    right: 0;
+    z-index: -10;
 
-    font-size: var(--fs-300);
+    font-size: var(--fs-200);
 
     img {
-        max-width: 240px;
-        margin-bottom: 1rem;
+        max-width: 200px;
+        margin-bottom: 0.5rem;
     }
 
     .social-icons {
@@ -22,6 +23,7 @@ background-color: var(--col-primary-000);
     .menu {
         list-style: none;
         padding-inline-start: 0;
+        margin-bottom: 0;
     }
 
     li.menu-item {
