@@ -13,7 +13,7 @@ defined('ABSPATH') || exit;
 ?>
 <footer class="footer pt-4">
     <div class="container-xl">
-        <div class="row pb-4">
+        <div class="row pb-4 mx-0">
             <div class="col-md-6 col-lg-3 mb-2 text-center text-md-start">
                 <img src="<?=get_stylesheet_directory_uri()?>/img/seabridge-logo.svg"
                     alt="">
@@ -45,7 +45,7 @@ defined('ABSPATH') || exit;
         </div>
     </div>
     <div class="colophon">
-        <div class="container-xl d-md-flex justify-content-between">
+        <div class="container-xl d-md-flex justify-content-between px-4">
             <div>&copy; <?=date('Y')?> Seabridge
                 Digital.</div>
             <div>

@@ -22931,6 +22931,14 @@ sup {
   color: var(--col-highlight);
 }
 
+.nav-list {
+  list-style: none;
+  -webkit-padding-start: 1rem;
+  padding-inline-start: 1rem;
+}
+.nav-list a {
+  padding: 0.5rem 0;
+}
 @media (min-width: 992px) {
   .nav-list {
     margin: 0;
@@ -23000,8 +23008,8 @@ footer {
   font-size: var(--fs-200);
 }
 footer img {
-  max-width: 240px;
-  margin-bottom: 1rem;
+  max-width: 200px;
+  margin-bottom: 0.5rem;
 }
 footer .social-icons {
   font-size: 1.4rem;
@@ -23228,7 +23236,7 @@ footer .current_page_item a {
   height: 400px;
   background-color: white;
   position: sticky;
-  z-index: -1;
+  z-index: -10;
   isolation: isolate;
   display: grid;
   place-content: center;
@@ -23246,6 +23254,14 @@ footer .current_page_item a {
   inset: 0;
   background-image: linear-gradient(90deg, var(--body-bg), transparent, var(--body-bg));
   z-index: -1;
+}
+.hero__inner {
+  max-width: 90vw;
+}
+@media (min-width: 992px) {
+  .hero__inner {
+    max-width: calc(90vw - var(--nav-width));
+  }
 }
 .hero h1, .hero .h1 {
   width: -moz-max-content;

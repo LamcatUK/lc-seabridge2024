@@ -37,58 +37,64 @@
     color: var(--col-highlight);
 }
 .nav-list {
+    list-style: none;
+    padding-inline-start: 1rem;
+    a {
+        padding: 0.5rem 0;
+    }
+
     @media (min-width:992px) {
         
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 1rem;
-    padding-block: 1rem;   
-    
-    a {
-        display: block;
-        position: relative;
-        z-index: 990;
-        padding: 1rem 1rem;
-        margin-inline-start: 1rem;
-        border-radius: 100vw 0 0 100vw;
-        color: var(--col-highlight);
-        text-decoration: none;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-    }
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+        padding-block: 1rem;   
+        
+        a {
+            display: block;
+            position: relative;
+            z-index: 990;
+            padding: 1rem 1rem;
+            margin-inline-start: 1rem;
+            border-radius: 100vw 0 0 100vw;
+            color: var(--col-highlight);
+            text-decoration: none;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
 
-    li:not(.active) a:hover {
-        color: var(--col-accent);
-    }
+        li:not(.active) a:hover {
+            color: var(--col-accent);
+        }
 
-    li.active a {
-        --_border_radius: 1rem;
-        view-transition-name: activeNavTab;
-        background-color: var(--body-bg);
-        color: var(--active);
-        position: relative;
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            width: var(--_border_radius);
-            height: var(--_border_radius);
-            right: 0;
-            background-color: var(--nav-bg);
+        li.active a {
+            --_border_radius: 1rem;
+            view-transition-name: activeNavTab;
+            background-color: var(--body-bg);
+            color: var(--active);
+            position: relative;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: var(--_border_radius);
+                height: var(--_border_radius);
+                right: 0;
+                background-color: var(--nav-bg);
+            }
+            &::before {
+                top: calc(var(--_border_radius) * -1);
+                border-radius: 0 0 100vw 0;
+                box-shadow: 5px 5px 0 5px var(--body-bg);
+            }
+            &::after {
+                bottom: calc(var(--_border_radius) * -1);
+                border-radius: 0 100vw 0 0;
+                box-shadow: 5px -5px 0 5px var(--body-bg);
+            }
         }
-        &::before {
-            top: calc(var(--_border_radius) * -1);
-            border-radius: 0 0 100vw 0;
-            box-shadow: 5px 5px 0 5px var(--body-bg);
-        }
-        &::after {
-            bottom: calc(var(--_border_radius) * -1);
-            border-radius: 0 100vw 0 0;
-            box-shadow: 5px -5px 0 5px var(--body-bg);
-        }
-    }
 
     }
 
