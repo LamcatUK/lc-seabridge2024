@@ -2,28 +2,28 @@
     <div class="container-xl">
         <h2>Services</h2>
         <div class="row g-4">
-            <a href="/branding/" class="col-lg-6 col-xl-3 service-nav__card" data-aos="fade-up">
+            <a href="/branding/" class="service-nav__card col-md-6 col-xl-3" data-aos="fade-up">
                 <div class="service-nav__icon"><i class="fa-solid fa-chess-bishop fa-3x"></i></div>
                 <h3>Branding</h3>
                 <div class="service-nav__content">
                     Elevate your brand with our strategic approach to logo design, brand strategy, and identity development. We don’t just create logos; we craft brand experiences that leave a lasting impression.
                 </div>
             </a>
-            <a href="/websites/" class="col-lg-6 col-xl-3 service-nav__card" data-aos="fade-up" data-aos-delay="100">
+            <a href="/websites/" class="service-nav__card col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-nav__icon"><i class="fa-solid fa-laptop-code fa-3x"></i></div>
                 <h3>Websites</h3>
                 <div class="service-nav__content">
                     Our website design and development services, encompassing responsive design, custom development, and CMS integration, expertly bring your digital vision to life, creating immersive and engaging online journeys for your audience.
                 </div>
             </a>
-            <a href="/search/" class="col-lg-6 col-xl-3 service-nav__card" data-aos="fade-up" data-aos-delay="200">
+            <a href="/search/" class="service-nav__card col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-nav__icon"><i class="fa-solid fa-magnifying-glass fa-3x"></i></div>
                 <h3>Search</h3>
                 <div class="service-nav__content">
                     Elevate your online presence with our SEO mastery, optimizing for organic traffic. Our PPC wizards craft precise campaigns, targeting your audience across multiple platforms for maximum impact.
                 </div>
             </a>
-            <a href="/print/" class="col-lg-6 col-xl-3 service-nav__card" data-aos="fade-up" data-aos-delay="300">
+            <a href="/print/" class="service-nav__card col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-nav__icon"><i class="fa-solid fa-print fa-3x"></i></div>
                 <h3>Print</h3>
                 <div class="service-nav__content">

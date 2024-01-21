@@ -3,8 +3,13 @@
         display: block;
         padding: 1rem;
         transition: color var(--transition);
-        &:not(:last-of-type) {
-            border-right: 1px solid var(--col-highlight);
+        border-bottom: 1px solid var(--col-highlight);
+
+        @media (min-width:768px) {
+            border-bottom: none;
+            &:not(:last-of-type) {
+                border-right: 1px solid var(--col-highlight);
+            }            
         }
 
         h3 {

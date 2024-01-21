@@ -2,28 +2,19 @@
 $classes = $block['className'] ?? null;
 ?>
 <style>
-.clients .clients__slide {
-    display: grid;
-    place-content: center;
-    height: 60px;
-}
-.clients .clients__slide img {
-    max-height: 60px;
-    max-width: 200px;
-    filter: brightness(5) grayscale(1) brightness(50%);
-}
+
 </style>
 <section class="clients <?=$classes?>">
     <div class="clients__inner">
-            <div class="clients__slider">
-                <?php
-                while (have_rows('client_logos','options')) {
-                    the_row();
-                    ?>
-                    <div class="clients__slide"><img src="<?=wp_get_attachment_image_url(get_sub_field('logo'),'full')?> " alt="" width="100%"></div>
-                    <?php
-                }
+        <div class="clients__slider">
+            <?php
+            while (have_rows('client_logos','options')) {
+                the_row();
                 ?>
+                <div class="clients__slide"><img src="<?=wp_get_attachment_image_url(get_sub_field('logo'),'full')?> " alt="" width="100%"></div>
+                <?php
+            }
+            ?>
         </div>
     </div>    
 </section>
@@ -39,6 +30,7 @@ add_action('wp_footer',function(){
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 1000,
+            arrows: false,
             responsive: [
                 {
                     breakpoint: 992,
@@ -47,9 +39,15 @@ add_action('wp_footer',function(){
                     }
                 },
                 {
-                    breakpoint: 576,
+                    breakpoint: 768,
                     settings: {
                         slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
                     }
                 }
             ]

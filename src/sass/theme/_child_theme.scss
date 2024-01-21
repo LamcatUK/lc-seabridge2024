@@ -32,8 +32,11 @@ a {
     }
 }
 body {
-    display: grid;
+
+    overflow-x: unset;
+
     @media (min-width:992px) {
+        display: grid;
         grid-template-columns: var(--nav-width) 1fr;
     }
     min-height: 100vh;
@@ -53,6 +56,7 @@ main {
     color: var(--col-highlight);
     z-index: 10;
     position: relative;
+    overflow-x: hidden;
     // padding-inline: 2rem;
 }
 

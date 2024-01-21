@@ -12,6 +12,7 @@ console.log('here'+navListItems);
 },9999
 );
 
+
 AOS.init({
     once: true,
     easing: 'ease-in',
