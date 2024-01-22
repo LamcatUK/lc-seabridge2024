@@ -1,7 +1,8 @@
 <?php
 $bg = wp_get_attachment_image_url(get_field('background'), 'full');
 ?>
-<section class="hero" style="background-image: url(<?=$bg?>)">
+<section class="hero">
+    <!-- style="background-image: url(<?=$bg?>)"> -->
     <div class="hero__inner">
         <h1 class="my-auto d-inline">
             <?php

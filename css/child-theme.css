@@ -13,14 +13,14 @@
   --col-light: rgb(255 255 255);
   --body-bg: var(--col-primary-900);
   --nav-bg: var(--col-primary-400);
-  --h-top: 100px;
+  --h-top: 90px;
   --fs-100: 0.64rem;
   --fs-200: 0.8rem;
   --fs-300: 0.90rem;
   --fs-400: 1.00rem;
-  --fs-500: 1.2rem;
+  --fs-500: clamp(1.1rem, 0.975rem + 0.4vw, 1.2rem);
   --fs-700: 1.95rem;
-  --fs-900: clamp(2.5rem, 0rem + 6.667vw, 6rem);
+  --fs-900: clamp(2.2rem, -2.55rem + 15.2vw, 6rem);
   --fw-400: 300;
   --fw-600: 700;
   --ff-body: "Adrianna", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -22931,6 +22931,14 @@ sup {
   color: var(--col-highlight);
 }
 
+.nav-list {
+  list-style: none;
+  -webkit-padding-start: 1rem;
+  padding-inline-start: 1rem;
+}
+.nav-list a {
+  padding: 0.5rem 0;
+}
 @media (min-width: 992px) {
   .nav-list {
     margin: 0;
@@ -22994,12 +23002,13 @@ sup {
 footer {
   background-color: var(--col-primary-000);
   bottom: 0;
-  z-index: -1;
-  font-size: var(--fs-300);
+  right: 0;
+  z-index: -10;
+  font-size: var(--fs-200);
 }
 footer img {
-  max-width: 240px;
-  margin-bottom: 1rem;
+  max-width: 200px;
+  margin-bottom: 0.5rem;
 }
 footer .social-icons {
   font-size: 1.4rem;
@@ -23011,6 +23020,7 @@ footer .menu {
   list-style: none;
   -webkit-padding-start: 0;
   padding-inline-start: 0;
+  margin-bottom: 0;
 }
 footer li.menu-item {
   margin-bottom: 0.5rem;
@@ -23217,28 +23227,35 @@ footer .current_page_item a {
 }
 
 .hero {
+  margin-top: var(--h-top);
+  top: var(--h-top);
   width: 100%;
   background-size: cover;
   background-position: center;
   height: 400px;
   background-color: white;
   position: sticky;
-  top: 0;
-  z-index: -1;
+  z-index: -10;
   isolation: isolate;
   display: grid;
+  place-content: center;
 }
 @media (min-width: 992px) {
   .hero {
+    margin-top: 0;
+    top: 0;
     width: calc(100vw - var(--nav-width));
   }
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(90deg, var(--body-bg), transparent, var(--body-bg));
-  z-index: -1;
+.hero__inner {
+  max-width: 90vw;
+}
+@media (min-width: 992px) {
+  .hero__inner {
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 1320px;
+  }
 }
 .hero h1, .hero .h1 {
   filter: drop-shadow(2px 4px 6px var(--col-primary-400));
@@ -23479,7 +23496,6 @@ a:hover {
 }
 
 body {
-  overflow-x: unset;
   min-height: 100vh;
   margin: 0;
   background-color: var(--col-primary-900);
@@ -23504,7 +23520,6 @@ main {
   color: var(--col-highlight);
   z-index: 10;
   position: relative;
-  overflow-x: hidden;
 }
 
 section {

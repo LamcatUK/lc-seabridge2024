@@ -3,8 +3,10 @@
         <?php
         if (get_field('pre_title') ?? null) {
             ?>
-            <div class="pretitle"><?=get_field('pre_title')?></div>
-            <?php
+        <div class="pretitle">
+            <?=get_field('pre_title')?>
+        </div>
+        <?php
         }
         ?>
         <div class="max-ch">
