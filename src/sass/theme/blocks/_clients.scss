@@ -1,4 +1,7 @@
 .clients {
+    @media (min-width:992px) {
+        max-width: calc(100vw - var(--nav-width));
+    }
     &__inner {
         background-color: var(--col-primary-000);
         color: var(--col-highlight);

@@ -1,9 +1,8 @@
 <?php
 $bg = wp_get_attachment_image_url(get_field('background'), 'full');
 ?>
-<section class="hero">
-    <!-- style="background-image: url(<?=$bg?>)"> -->
-    <div class="hero__inner">
+<section class="hero" style="background-image: url(<?=$bg?>)">
+    <div class="hero__inner px-4">
         <h1 class="my-auto d-inline">
             <?php
             if (get_field('pre_title') ?? null) {

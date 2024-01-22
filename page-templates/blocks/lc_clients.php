@@ -34,13 +34,13 @@ add_action('wp_footer', function () {
                 autoplaySpeed: 1000,
                 arrows: false,
                 responsive: [{
-                        breakpoint: 1200,
+                        breakpoint: 1480,
                         settings: {
                             slidesToShow: 4
                         }
                     },
                     {
-                        breakpoint: 992,
+                        breakpoint: 1200,
                         settings: {
                             slidesToShow: 3
                         }
@@ -64,3 +64,4 @@ add_action('wp_footer', function () {
 </script>
 <?php
 }, 9999);
+?>

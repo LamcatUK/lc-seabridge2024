@@ -23001,6 +23001,7 @@ sup {
 
 footer {
   background-color: var(--col-primary-000);
+  position: sticky;
   bottom: 0;
   right: 0;
   z-index: -10;
@@ -23229,7 +23230,6 @@ footer .current_page_item a {
 .hero {
   margin-top: var(--h-top);
   top: var(--h-top);
-  width: 100%;
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -23244,7 +23244,6 @@ footer .current_page_item a {
   .hero {
     margin-top: 0;
     top: 0;
-    width: calc(100vw - var(--nav-width));
   }
 }
 .hero__inner {
@@ -23252,8 +23251,6 @@ footer .current_page_item a {
 }
 @media (min-width: 992px) {
   .hero__inner {
-    width: -moz-max-content;
-    width: max-content;
     max-width: 1320px;
   }
 }
@@ -23266,6 +23263,7 @@ footer .current_page_item a {
 .hero__title {
   font-size: var(--fs-900);
   padding-bottom: 0.5rem;
+  line-height: 1.1;
 }
 
 .agencies__card {
@@ -23451,6 +23449,11 @@ footer .current_page_item a {
   font-size: var(--fs-300);
 }
 
+@media (min-width: 992px) {
+  .clients {
+    max-width: calc(100vw - var(--nav-width));
+  }
+}
 .clients__inner {
   background-color: var(--col-primary-000);
   color: var(--col-highlight);
