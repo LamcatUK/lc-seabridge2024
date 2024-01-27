@@ -23,7 +23,9 @@
   --fs-900: clamp(2.2rem, -2.55rem + 15.2vw, 6rem);
   --fw-400: 300;
   --fw-600: 700;
+  --fw-900: 700;
   --ff-body: "Adrianna", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --ff-headings: "Adrianna", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   --transition: 250ms ease-out;
   --shadow-1: rgba(0,0,0,.12) 0 1px 3px, rgba(0,0,0,.24) 0 1px 2px;
   --filter-shadow-1: drop-shadow(0 1px 3px rgba(0,0,0,.12)) drop-shadow(0 1px 2px rgba(0,0,0,.24));

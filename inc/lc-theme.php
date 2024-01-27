@@ -2,8 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-require_once LC_THEME_DIR . '/inc/lc-posttypes.php';
-// require_once LC_THEME_DIR . '/inc/lc-taxonomies.php';
+
 require_once LC_THEME_DIR . '/inc/lc-utility.php';
 require_once LC_THEME_DIR . '/inc/lc-blocks.php';
 // require_once LC_THEME_DIR . '/inc/lc-news.php';
@@ -227,6 +226,39 @@ function LC_theme_enqueue()
 }
 add_action('wp_enqueue_scripts', 'LC_theme_enqueue');
 
+
+function lc_work_nav()
+{
+    ?>
+<div class="work__nav pt-5 mb-5">
+    <hr>
+    <?php
+
+    $next_post_obj  = get_adjacent_post('', '', true);
+    if ($next_post_obj) {
+        $next_post_ID   = isset($next_post_obj->ID) ? $next_post_obj->ID : '';
+        $next_post_link = get_permalink($next_post_ID);
+        ?>
+    <a href="<?php echo $next_post_link; ?>" rel="next"
+        class="next">Next Project
+        <div class="row">
+            <div class="col-md-6">
+                <h2><?=get_the_title($next_post_ID)?></h2>
+            </div>
+            <div class="col-md-6">
+                <div class="subtitle">
+                    <?=get_field('subtitle', $next_post_ID)?>
+                </div>
+            </div>
+        </div>
+    </a>
+    <?php
+    }
+    ?>
+</div>
+<?php
+
+}
 
 // black thumbnails - fix alpha channel
 /**
