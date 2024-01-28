@@ -7,21 +7,21 @@ $bg = wp_get_attachment_image_url(get_field('background'), 'full');
             <?php
             if (get_field('pre_title') ?? null) {
                 ?>
-            <div class="hero__pre">
+            <div class="hero__pre text-center text-lg-start">
                 <?=get_field('pre_title')?>
             </div>
             <?php
             }
             if (get_field('title') ?? null) {
                 ?>
-            <div class="hero__title">
+            <div class="hero__title text-center text-lg-start">
                 <?=get_field('title')?>
             </div>
             <?php
             }
             if (get_field('post_title') ?? null) {
                 ?>
-            <div class="hero__post text-end">
+            <div class="hero__post text-center text-lg-end">
                 <?=get_field('post_title')?>
             </div>
             <?php
