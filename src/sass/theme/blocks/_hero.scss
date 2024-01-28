@@ -17,13 +17,13 @@
     isolation: isolate;
     display: grid;
     place-content: center;
-    // &::before {
-    //     content: "";
-    //     position: absolute;
-    //     inset: 0;
-    //     background-image: linear-gradient(90deg, var(--body-bg), transparent, var(--body-bg));
-    //     z-index: -1;
-    // }
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(90deg, var(--body-bg), transparent, var(--body-bg));
+        z-index: -1;
+    }
 
     &__inner {
         max-width: 90vw;
