@@ -2,18 +2,22 @@
     margin-top: var(--h-top);
     top: var(--h-top);
     // width: 100%;
+    height: min-content;
+    padding-block: 4rem;
+
     @media (min-width:992px) {
         margin-top: 0;
         top:0;
-        // width: calc(100vw - var(--nav-width));
+        height: 400px;
     }
     background-size: cover;
     background-position: center;
-    height: 400px;
+
+
     background-color: white;
     position: sticky;
 
-    z-index: -10;
+    z-index: -1;
     isolation: isolate;
     display: grid;
     place-content: center;

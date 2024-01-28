@@ -23209,12 +23209,14 @@ footer .current_page_item a {
 .hero {
   margin-top: var(--h-top);
   top: var(--h-top);
+  height: -moz-min-content;
+  height: min-content;
+  padding-block: 4rem;
   background-size: cover;
   background-position: center;
-  height: 400px;
   background-color: white;
   position: sticky;
-  z-index: -10;
+  z-index: -1;
   isolation: isolate;
   display: grid;
   place-content: center;
@@ -23223,6 +23225,7 @@ footer .current_page_item a {
   .hero {
     margin-top: 0;
     top: 0;
+    height: 400px;
   }
 }
 .hero::before {
